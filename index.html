@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MoveApp</title>
-    <link rel="stylesheet" href="style.css">
-    
+<head>
+  <title>MoveApp - Taxi App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <header>
     <h1>MoveApp</h1>
-
+    <nav>
+      <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <h2>Book a Ride</h2>
-    <form>
-      <label for="pickup-location">Pickup Location:</label>
-      <input type="text" id="pickup-location" name="pickup-location">
+    <section id="booking-form">
+      <h2>Book a Ride</h2>
+      <form id="booking">
+        <div>
+          <label for="pickup">Pickup:</label>
+          <input type="text" id="pickup" name="pickup" required>
+        </div>
+        <div>
+          <label for="destination">Destination:</label>
+          <input type="text" id="destination" name="destination" required>
+        </div>
+        <div>
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div>
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div>
+          <input type="submit" value="Book Now">
+        </div>
+      </form>
+    </section>
 
-      <label for="dropoff-location">Dropoff Location:</label>
-      <input type="text" id="dropoff-location" name="dropoff-location">
-
-      <input type="submit" value="Book Ride">
-    </form>
+    <div id="confirmation-modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Booking Confirmation</h3>
+        <p id="pickup-confirm"></p>
+        <p id="destination-confirm"></p>
+        <p id="date-confirm"></p>
+        <p id="time-confirm"></p>
+      </div>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2023 Taxi App</p>
+    <p>&copy; 2023 MoveApp. All rights reserved.</p>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
